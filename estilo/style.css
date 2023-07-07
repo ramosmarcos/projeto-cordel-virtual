@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+    --cor0: white;                                             
+    --cor1: #c9e9e8;
+    --cor2: #36827F;
+    --cor3: #154643;
+    --cor4: #baebe9;
+    --fonte-titulo: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --fonte-textos: 'Belanosima', sans-serif;
+    }
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body {
+    min-height: 100vh;
+    background-color: beige;
+    font-family: var(--fonte-titulo);
+    font-size: 1em;
+}
+
+header {
+    background-color: black;
+    color: var(--cor0);
+    text-align: center;
+}
+
+header > h1 {
+    padding-top: 50px;
+    padding-bottom: 5px;
+    font-family: var(--fonte-titulo);
+    font-variant: small-caps;
+    font-size: 5vw;         /* VIDE AQUI */
+}
+
+/* Às vezes o TEXTO do nosso site fica adequado para telas maiores (desktop) mas quando abrimos a página em uma tela menor (celular), começa a ficar grande demais para ler... Então quando surgir esse tipo de problema, temos que tentar adaptar o texto do site pensando nessa questão.
+
+
+
+No desafio "Cordel Moderno" usamos um recurso que faz com que o TEXTO do site aumente ou diminua de acordo com o tamanho (tamanho da largura) da janela do navegador.
+
+
+
+Para fazer isso, a dica é usar as unidades de medidas relativas das CSS, como o vh e vw. Basicamente, vh significa " viewport height " e vw significa " viewport width ". 
+
+
+
+Sendo assim, se você quer formatar o seu texto dessa forma, ao invés de configurá-lo com unidades de medida absolutas (como px ou em), configure o tamanho do texto (font-size) com a unidade de medida "vw". 
+
+
+
+Exemplo:
+
+Para o título principal: font-size: 10vw;
+
+Paro o corpo da página: font-size: 3.5vw;
+
+Na primeira opção o tamanho da fonte vai ser referente a 10% da largura da viewport. Já na segunda opção, será referente a 3.5% da largura dessa viewport.
+
+
+Dessa forma, quando a tela for grande, ele coloca a letra grande... Quando a tela é menor, ele coloca a letra menor, alterando a o tamanho da fonte dinamicamente baseado na largura da tela. 
+
+
+Observação: Essa técnica das medidas vh e vw para adaptar o texto não é o melhor recurso para fazer esse tipo de adaptação dinâmica. Pode até funcionar, mas não gera um resultado 100% perfeito. O ideal para fazer esse tipo de adaptação seria usar Media Queries, um conceito que veremos mais pra frente. */
+
+header > p {
+    padding-bottom: 35px;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor0);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+section {
+    margin: auto;
+    padding: 10vh 0px 10vh 30px;
+    line-height: 2em;
+    font-family: var(--fonte-textos);
+    font-size: 3.5vw;
+}
+
+section > p {
+    padding-bottom: 2em;  /* para evitar ter que fazer tags "br" entre parágrafos */
+}
+
+.normal {
+    background-color: var(--cor0);
+    color: black;
+}
+
+.imagem > p {
+    background-color: rgba(0, 0, 0, 0.495);
+    display: inline-block;  /* caixa que se adapta ao tamanho do conteudo */
+    padding: 15px;
+    text-shadow: 1px 1px 0px black;
+}
+
+.imagem {
+    background-color: rgb(45, 45, 45);
+    color: var(--cor0);
+    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.301);
+}
+
+section#img01 {
+    background-image: url(../pacote-d012/imagens/background001.jpg);
+    background-position: right center;
+    background-size: cover;
+    background-attachment: fixed;       /* EFEITO PARALAX AQUI*/
+}
+
+section#img02 {
+    background-image: url(../pacote-d012/imagens/background002.jpg);
+    background-size: cover;
+    background-attachment: fixed;       /* EFEITO PARALAX AQUI*/
+}
+
+footer {
+    background-color: black;
+    padding: 5px;
+    font-family: var(--fonte-titulo);
+}
+
+footer > p {
+    color: var(--cor0);
+    text-align: center;
+}
+
